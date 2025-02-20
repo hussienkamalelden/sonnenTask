@@ -1,9 +1,25 @@
-project name: `Battery Monitor`
+# Project Name: `Battery Monitor`
 
-# Project setup
+![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
+
+
+# Project Description:
+
+This project is a simple battery monitor that displays the battery's charging level over the last 24 hours.
+
+# Project Stack:
+
+- React
+- TypeScript
+- Tailwind CSS
+- Apexcharts
+- Vite
+
+# Project Setup
 
 Node version: v20.18.2
-vite version: 6.1.0
+
+Vite version: 6.1.0
 
 to run the project:
 
