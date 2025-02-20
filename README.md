@@ -1,5 +1,9 @@
 # Project Name: `Battery Monitor`
 
+## Task URL  
+[Click here to view the task](https://your-task-url.com)
+
+
 ![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
 
 
