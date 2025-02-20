@@ -1,6 +1,7 @@
 # Project Name: `Battery Monitor`
 
-![Task Image](https://ibb.co/hJKvwzv8)
+![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
+
 
 # Project Description:
 
@@ -18,7 +19,7 @@ This project is a simple battery monitor that displays the battery's charging le
 
 Node version: v20.18.2
 
-vite version: 6.1.0
+Vite version: 6.1.0
 
 to run the project:
 
