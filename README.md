@@ -6,11 +6,11 @@
 ![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
 
 
-# Task Description:
+### Task Description:
 
 This task is a simple battery monitor that displays the battery's charging level over the last 24 hours.
 
-# Task Stack:
+### Task Stack:
 
 - React
 - TypeScript
@@ -18,7 +18,7 @@ This task is a simple battery monitor that displays the battery's charging level
 - Apexcharts
 - Vite
 
-# Task Setup
+### Task Setup
 
 Node version: v20.18.2
 
