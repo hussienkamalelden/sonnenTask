@@ -20,7 +20,8 @@ const SelectTime = ({ data }: { data: IBatteryData[] }) => {
     if (level < 20) return type === 'style' ? 'text-[#E72315]' : low;
     if (level < 50) return type === 'style' ? 'text-[#FBAA12]' : medium;
     if (level < 65) return type === 'style' ? 'text-[#FFE103]' : high;
-    return type === 'style' ? 'text-[#24A01E]' : full;
+    if (level < 100) return type === 'style' ? 'text-[#24A01E]' : full;
+    return type === 'style' ? 'text-[#24A01E]' : overcharged;
   };
 
   return (
