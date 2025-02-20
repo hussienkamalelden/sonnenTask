@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import ColumnChart from './components/ColumnChart';
+import batteryData from './data.json';
+import IBatteryData from './models/IBatteryData';
+import SectionWrapper from './components/common/SectionWrapper';
+import SelectTime from './components/SelectTime';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [data, setData] = useState<IBatteryData[]>([]);
+
+  useEffect(() => {
+    //format the date to be in the format of "2024-09-02 07:00:12"
+    const formattedData = batteryData.chargingStates.map(
+      (item: IBatteryData) => ({
+        ...item,
+        date: formatDateTime(item.date),
+      })
+    );
+
+    setData(formattedData);
+  }, []);
+
+  const formatDateTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="container mx-auto mt-4">
+      <h1 className="md:text-4xl text-2xl font-bold text-center text-[#1971c2]">
+        Battery Charge Status
+      </h1>
+      {/* Battery History Chart Section*/}
+      <SectionWrapper
+        title="Battery History Chart"
+        brief="The chart below shows the battery's history over the last 24 hours."
+      >
+        <ColumnChart data={data} />
+      </SectionWrapper>
 
-export default App
+      {/* Select Time Section*/}
+      <SectionWrapper
+        title="Select Time"
+        brief="Select a specific time to see the battery's charging level at that time."
+      >
+        <SelectTime data={data} />
+      </SectionWrapper>
+    </div>
+  );
+};
+
+export default App;
