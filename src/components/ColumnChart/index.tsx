@@ -6,11 +6,38 @@ const ColumnChart = ({ data }: { data: IBatteryData[] }) => {
   const chartOptions: ApexOptions = {
     chart: {
       type: 'bar',
+      toolbar: {
+        show: false,
+      },
     },
     plotOptions: {
       bar: {
         horizontal: false,
         columnWidth: '40%',
+        colors: {
+          ranges: [
+            {
+              from: 0,
+              to: 20,
+              color: '#E72315',
+            },
+            {
+              from: 21,
+              to: 50,
+              color: '#FBAA12',
+            },
+            {
+              from: 51,
+              to: 65,
+              color: '#FFE103',
+            },
+            {
+              from: 66,
+              to: 100,
+              color: '#24A01E',
+            },
+          ],
+        },
       },
     },
     dataLabels: {
