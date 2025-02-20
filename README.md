@@ -1,6 +1,6 @@
 # Project Name: `Battery Monitor`
 
-https://ibb.co/hJKvwzv8
+![Task Image](https://ibb.co/hJKvwzv8)
 
 # Project Description:
 
