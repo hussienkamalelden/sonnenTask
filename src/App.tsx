@@ -1,43 +1,34 @@
-import ReactApexChart from 'react-apexcharts';
-import { ApexOptions } from 'apexcharts';
+import { useState, useEffect } from 'react';
+import ColumnChart from './components/ColumnChart';
+import batteryData from './data.json';
+import IBatteryData from './models/IBatteryData';
 
 const App = () => {
-  const chartOptions: ApexOptions = {
-    chart: {
-      type: 'bar',
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: '55%',
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    },
+  const [data, setData] = useState<IBatteryData[]>([]);
+
+  useEffect(() => {
+    //format the date to be in the format of "2024-09-02 07:00:12"
+    const formattedData = batteryData.chargingStates.map(
+      (item: IBatteryData) => ({
+        ...item,
+        date: formatDateTime(item.date),
+      })
+    );
+
+    setData(formattedData);
+  }, []);
+
+  const formatDateTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
   };
 
-  const series = [
-    {
-      name: 'Sales',
-      data: [44, 55, 57, 56, 61, 58],
-    },
-  ];
-
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline text-red-500">Hello World</h1>
-      <div className="mt-8">
-        <ReactApexChart
-          options={chartOptions}
-          series={series}
-          type="bar"
-          height={350}
-        />
-      </div>
+    <div className="container mx-auto mt-4">
+      <h1 className="md:text-4xl text-2xl font-bold text-center text-[#1971c2]">
+        Battery Charge Status
+      </h1>
+      <ColumnChart data={data} />
     </div>
   );
 };
