@@ -1,16 +1,16 @@
-## Task Name: `Battery Monitor`
+## Project Name: `Battery Monitor`
 
-### Task URL:  [Click here to view the task](https://battery-monitor.vercel.app)
+### Project URL:  [Click here to view the task](https://battery-monitor.vercel.app)
 
 
 ![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
 
 
-### Task Description:
+### Project Description:
 
-This task is a simple battery monitor that displays the battery's charging level over the last 24 hours.
+This project is a simple battery monitor that displays the battery's charging level over the last 24 hours.
 
-### Task Stack:
+### Project Stack:
 
 - React
 - TypeScript
@@ -18,7 +18,7 @@ This task is a simple battery monitor that displays the battery's charging level
 - Apexcharts
 - Vite
 
-### Task Setup
+### Project Setup
 
 Node version: v20.18.2
 
