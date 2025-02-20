@@ -1,12 +1,12 @@
-# Project name: `Battery Monitor`
+# Project Name: `Battery Monitor`
 
-![alt text](https://www.mediafire.com/view/4f64na5llavb0th/task.png/file)
+https://ibb.co/hJKvwzv8
 
-# Project description:
+# Project Description:
 
 This project is a simple battery monitor that displays the battery's charging level over the last 24 hours.
 
-# Project stack:
+# Project Stack:
 
 - React
 - TypeScript
@@ -14,7 +14,7 @@ This project is a simple battery monitor that displays the battery's charging le
 - Apexcharts
 - Vite
 
-# Project setup
+# Project Setup
 
 Node version: v20.18.2
 
