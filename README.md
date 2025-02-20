@@ -1,7 +1,6 @@
-# Project Name: `Battery Monitor`
+## Project Name: `Battery Monitor`
 
-## Task URL  
-[Click here to view the task](https://your-task-url.com)
+### Task URL:  [Click here to view the task](https://battery-monitor.vercel.app)
 
 
 ![task](https://github.com/user-attachments/assets/4286cc31-5a53-4e6d-aab1-5829d8e8710b)
