@@ -16,11 +16,11 @@ const SelectTime = ({ data }: { data: IBatteryData[] }) => {
     if (item) setSelectedTime(item);
   };
 
-  const batteryLevelStyle = (level: number) => {
-    if (level < 20) return 'text-[#E72315]';
-    if (level < 50) return 'text-[#FBAA12]';
-    if (level < 65) return 'text-[#FFE103]';
-    return 'text-[#24A01E]';
+  const batteryLevel = (level: number, type: string) => {
+    if (level < 20) return type === 'style' ? 'text-[#E72315]' : low;
+    if (level < 50) return type === 'style' ? 'text-[#FBAA12]' : medium;
+    if (level < 65) return type === 'style' ? 'text-[#FFE103]' : high;
+    return type === 'style' ? 'text-[#24A01E]' : full;
   };
 
   return (
@@ -37,20 +37,10 @@ const SelectTime = ({ data }: { data: IBatteryData[] }) => {
         ))}
       </select>
       {selectedTime && (
-        <div className="mt-4 flex md:flex-row flex-col  items-center gap-4  mt-10">
+        <div className="mt-4 flex md:flex-row flex-col items-center gap-4  mt-10">
           <div>
             <img
-              src={
-                selectedTime.chargingLevel >= 100
-                  ? overcharged
-                  : selectedTime.chargingLevel >= 66
-                  ? full
-                  : selectedTime.chargingLevel >= 49
-                  ? high
-                  : selectedTime.chargingLevel >= 19
-                  ? medium
-                  : low
-              }
+              src={batteryLevel(selectedTime.chargingLevel, 'image')}
               alt="battery"
               className="md:w-14 w-10"
             />
@@ -62,8 +52,9 @@ const SelectTime = ({ data }: { data: IBatteryData[] }) => {
             <h3 className="text-md text-gray-500">
               Charging Level:{' '}
               <span
-                className={`font-semibold ${batteryLevelStyle(
-                  selectedTime.chargingLevel
+                className={`font-semibold ${batteryLevel(
+                  selectedTime.chargingLevel,
+                  'style'
                 )}`}
               >
                 {selectedTime.chargingLevel}%
