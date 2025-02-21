@@ -13,7 +13,7 @@ const SelectTime = ({ data }: { data: IBatteryData[] }) => {
     const item = data.find(
       (item) => item.internalEventId === parseInt(e.target.value)
     );
-    if (item) setSelectedTime(item);
+    setSelectedTime(item ? item : null);
   };
 
   const batteryLevel = (level: number, type: string) => {
