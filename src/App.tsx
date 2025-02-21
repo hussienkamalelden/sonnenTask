@@ -9,7 +9,7 @@ const App = () => {
   const [data, setData] = useState<IBatteryData[]>([]);
 
   useEffect(() => {
-    //format the date to be in the format of "2024-09-02 07:00:12"
+    //format the dates
     const formattedData = batteryData.chargingStates.map(
       (item: IBatteryData) => ({
         ...item,
